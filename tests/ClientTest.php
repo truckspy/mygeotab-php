@@ -6,13 +6,14 @@ use PHPUnit\Framework\TestCase;
 
 class ClientTest extends TestCase
 {
-    public function setUp() {
+    public function setUp(): void {
         if (!MYGEOTAB_USERNAME) {
             $this->assertFalse(true, "Environment MYGEOTAB_USERNAME not defined, so no API call can be made");
         }
     }
 
-    public function testCall() {
+    public function testCall(): void
+    {
         $api = new Geotab\API(MYGEOTAB_USERNAME, MYGEOTAB_PASSWORD, MYGEOTAB_DATABASE);
         $api->authenticate();
 
@@ -37,7 +38,8 @@ class ClientTest extends TestCase
     /*
     Make an authenticate call and make sure it throws a MyGeotabException
     */
-    public function testAuthenticationFailure() {
+    public function testAuthenticationFailure(): void
+    {
         try {
             $api = new Geotab\API(MYGEOTAB_USERNAME . "INCORRECTUSERNAME", MYGEOTAB_PASSWORD . "INCORRECTPWD");
             $api->authenticate();
@@ -48,7 +50,8 @@ class ClientTest extends TestCase
         }
     }
     
-    public function testDateTimeFormat() {
+    public function testDateTimeFormat(): void
+    {
         $today = new \DateTime();
 
         $api = new Geotab\API(MYGEOTAB_USERNAME, MYGEOTAB_PASSWORD, MYGEOTAB_DATABASE);
