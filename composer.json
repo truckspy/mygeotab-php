@@ -13,8 +13,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "guzzlehttp/guzzle": "^7.4",
-        "monolog/monolog": "^1.23"
+        "guzzlehttp/guzzle": "^7.8",
+        "monolog/monolog": "^1.23 | ^2.0 | ^3.0"
     },
     "require-dev": {
       "phpunit/phpunit": "^9"
@@ -26,7 +26,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Geotab\\API\\Tests\\": "test/"
+            "Geotab\\API\\Tests\\": "tests/"
         }
     }
 }
